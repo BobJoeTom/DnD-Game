@@ -1,4 +1,4 @@
-package brusberg.mole_project.utils;
+package com.brendenbrusberg.utils;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

@@ -1,10 +1,6 @@
-package io.github.bobjoetom.elements.armor;
+package com.brendenbrusberg.elements.items.armor;
 
-import com.badlogic.gdx.graphics.Texture;
-
-import java.lang.Character;
-
-import io.github.bobjoetom.elements.Item;
+import com.brendenbrusberg.graphics.Image;
 
 /**
  * Created by Brenden on 6/30/2016.

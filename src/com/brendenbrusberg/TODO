@@ -16,3 +16,12 @@ Main Menu Program
 		Multi-player
 			Java Input Streams using 			
 		Single Player
+
+Onto Integrating the 2 projects, building image render, images****,
+and replacing images into ITms and characters and the such, next is  rendering fixes, input then multiplayer
+
+fix maps
+have maps contain all character and item info and to be rendered
+state to controll logic
+game state manager, stack of states, to contain states, pause them and resume others baiscally
+by stop updating one but containing its info

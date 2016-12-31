@@ -1,14 +1,14 @@
-package io.github.bobjoetom.elements;
+package com.brendenbrusberg.elements.chars;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.brendenbrusberg.graphics.Image;
 
 import java.util.ArrayList;
 
-import io.github.bobjoetom.elements.CharClass.CharClass;
-import io.github.bobjoetom.elements.Races.Race;
-import io.github.bobjoetom.elements.Weapons.Weapon;
-import io.github.bobjoetom.elements.armor.Armor;
-import io.github.bobjoetom.elements.status.Status;
+import com.brendenbrusberg.elements.chars.CharClass;
+import com.brendenbrusberg.elements.races.Race;
+import com.brendenbrusberg.elements.status.Status;
+import com.brendenbrusberg.elements.items.weapons.Weapon;
+import com.brendenbrusberg.elements.items.armor.Armor;
 
 /**
  * Created by Brenden on 6/30/2016.

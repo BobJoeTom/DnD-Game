@@ -1,4 +1,4 @@
-package brusberg.mole_project.math;
+package com.brendenbrusberg.math;
 
 import static java.lang.Math.*;
 

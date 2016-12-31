@@ -1,4 +1,4 @@
-package brusberg.mole_project.graphics;
+package com.brendenbrusberg.graphics;
 
 import java.awt.image.BufferedImage;
 //import java.io.FileInputStream;

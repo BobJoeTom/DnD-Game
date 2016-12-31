@@ -1,4 +1,4 @@
-package io.github.bobjoetom.map.tiles;
+package com.brendenbrusberg.elements.map.tiles;
 
 /**
  * Created by Brenden on 6/30/2016.

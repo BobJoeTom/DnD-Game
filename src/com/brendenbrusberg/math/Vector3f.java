@@ -1,4 +1,4 @@
-package brusberg.mole_project.math;
+package com.brendenbrusberg.math;
 //
 //Contains all vector operations and basically is an array of points
 //Vector represents a coordinate, 3 points, floats

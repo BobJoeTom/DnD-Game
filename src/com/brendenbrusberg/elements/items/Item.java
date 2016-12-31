@@ -1,6 +1,6 @@
-package io.github.bobjoetom.elements;
+package com.brendenbrusberg.elements.items;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.brendenbrusberg.graphics.Image;
 
 /**
  * Created by Brenden on 6/30/2016.
@@ -9,26 +9,17 @@ public class Item {
     private String name;
     private String discription;
     private int x, y;
-    private String texturePath;
-    private Texture texture;
+    private int ap;
+    private Image image;
     public final int WIDTH = 120;
     public final int HEIGHT = 120;
-
-    public Texture getTexture() {
-        return texture;
-    }
-
-    public void setTexture(String texture) {
-        this.texture = new Texture(texture);
-    }
-
+    
     public String getTexturePath() {
-        return texturePath;
+        return image.getTexturePath();
     }
 
     public void setTexturePath(String texturePath) {
-        this.texturePath = texturePath;
-        setTexture(getTexturePath());
+        image.setTeturePath(texturePath);
     }
 
     public String getName() {
@@ -53,6 +44,14 @@ public class Item {
 
     public void setX(int x) {
         this.x = x;
+    }
+    
+    public int getAP() {
+        return ap;
+    }
+
+    public void setAP(int ap) {
+        this.ap = ap;
     }
 
     public int getY() {

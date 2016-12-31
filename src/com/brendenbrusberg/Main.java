@@ -1,4 +1,4 @@
-package brusberg.mole_project;
+package com.brendenbrusberg;
 
 //Native bindings to the GLFW library
 import static org.lwjgl.glfw.GLFW.GLFW_RESIZABLE;

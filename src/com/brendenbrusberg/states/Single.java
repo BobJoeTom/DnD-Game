@@ -1,4 +1,4 @@
-package com.brendenbrusberg;
+package com.brendenbrusberg.states;
 
 public class Single {
 

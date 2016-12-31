@@ -1,4 +1,4 @@
-package io.github.bobjoetom.elements.CharClass;
+package com.brendenbrusberg.elements.chars;
 
 /**
  * Created by Brenden on 6/30/2016.

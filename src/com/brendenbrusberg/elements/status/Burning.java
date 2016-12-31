@@ -1,6 +1,8 @@
-package io.github.bobjoetom.elements.status;
+package com.brendenbrusberg.elements.status;
 
-import io.github.bobjoetom.elements.Character;
+import com.brendenbrusberg.elements.chars.Character;
+
+import io.github.bobjoetom.elements.status.Status;
 
 /**
  * Created by Brenden on 7/5/2016.

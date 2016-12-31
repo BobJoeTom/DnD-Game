@@ -1,4 +1,4 @@
-package io.github.bobjoetom.elements.Weapons;
+package com.brendenbrusberg.elements.items.weapons;
 
 /**
  * Created by Brenden on 6/30/2016.

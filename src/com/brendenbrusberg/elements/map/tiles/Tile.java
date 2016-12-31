@@ -1,6 +1,6 @@
-package io.github.bobjoetom.map.tiles;
+package com.brendenbrusberg.elements.map.tiles;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.brendenbrusberg.graphics.Image;
 
 /**
  * Created by Brenden on 6/30/2016.

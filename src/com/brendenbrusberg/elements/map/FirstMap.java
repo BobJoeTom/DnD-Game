@@ -1,4 +1,4 @@
-package io.github.bobjoetom.map;
+package com.brendenbrusberg.elements.map;
 
 import java.util.ArrayList;
 

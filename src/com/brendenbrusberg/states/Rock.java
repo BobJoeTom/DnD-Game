@@ -1,4 +1,4 @@
-package brusberg.mole_project.level;
+package com.brendenbrusberg.states;
 
 import brusberg.mole_project.graphics.Texture;
 import brusberg.mole_project.graphics.VertexArray;

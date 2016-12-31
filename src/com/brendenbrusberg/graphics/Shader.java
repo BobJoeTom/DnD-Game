@@ -1,4 +1,4 @@
-package brusberg.mole_project.graphics;
+package com.brendenbrusberg.graphics;
 
 import static org.lwjgl.opengl.GL20.*;
 

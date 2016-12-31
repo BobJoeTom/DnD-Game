@@ -1,6 +1,4 @@
-package io.github.bobjoetom.elements.Potions;
-
-import io.github.bobjoetom.elements.Character;
+package com.brendenbrusberg.elements.items.potions;
 
 /**
  * Created by Brenden on 7/2/2016.

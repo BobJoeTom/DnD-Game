@@ -1,4 +1,4 @@
-package brusberg.mole_project.input;
+package com.brendenbrusberg.input;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;

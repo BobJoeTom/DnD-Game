@@ -1,4 +1,4 @@
-package io.github.bobjoetom.elements.armor;
+package com.brendenbrusberg.elements.items.armor;
 
 /**
  * Created by Brenden on 7/2/2016.

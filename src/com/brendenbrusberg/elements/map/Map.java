@@ -1,17 +1,18 @@
-package io.github.bobjoetom.map;
-
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+package com.brendenbrusberg.elements.map;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
-import io.github.bobjoetom.MainClass;
-import io.github.bobjoetom.elements.Character;
-import io.github.bobjoetom.map.tiles.Tile;
+import com.brendenbrusberg.graphics.*;
+import com.brendenbrusberg.Main;
+import com.brendenbrusberg.elements.chars.Character;
+import com.brendenbrusberg.elements.map.tiles.Tile;
 
 /**
  * Created by Brenden on 6/30/2016.
  */
+
+//TODO FIX MAP RENDER, and LOAD, and stacks,load all characters onto map, have logic in game
 public class Map {
     private int WIDTH;
     private int HEIGHT;
