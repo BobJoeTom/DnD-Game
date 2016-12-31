@@ -1,4 +1,4 @@
-package io.github.bobjoetom.elements.status;
+package com.brendenbrusberg.elements.status;
 
 import com.brendenbrusberg.elements.chars.Character;
 
