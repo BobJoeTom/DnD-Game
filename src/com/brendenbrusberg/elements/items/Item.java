@@ -21,7 +21,11 @@ public class Item {
     public void setTexturePath(String texturePath) {
         image.setTeturePath(texturePath);
     }
-
+    
+    public Image getImage(){
+    	return image;
+    }
+    
     public String getName() {
         return name;
     }

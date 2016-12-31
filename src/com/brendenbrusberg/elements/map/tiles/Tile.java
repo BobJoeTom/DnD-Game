@@ -8,20 +8,20 @@ import com.brendenbrusberg.graphics.Image;
 public class Tile {
     private float x, y;
     private String texturePath;
-    private Texture texture;
+    private Image image;
     public final int WIDTH = 120;
     public final int HEIGHT = 120;
 
-    public Texture getTexture() {
-        return texture;
+    public String getTexturePath() {
+        return image.getTexturePath();
     }
 
-    public void setTexture(String texture) {
-        this.texture = new Texture(texture);
+    public void setTexturePath(String texturePath) {
+        image.setTeturePath(texturePath);
     }
-
-    public float getX() {
-        return x;
+    
+    public Image getImage(){
+    	return image;
     }
 
     public void setX(float x) {

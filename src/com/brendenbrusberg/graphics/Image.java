@@ -52,7 +52,62 @@ public class Image {
 		texture = new Texture(texturePath);
 	}
 	
+	public void update(){
+		
+		/*if(Input.keys[GLFW.GLFW_KEY_LEFT])
+			posistion.x -=0.1f;
+		if(Input.keys[GLFW.GLFW_KEY_RIGHT])
+			posistion.x +=0.1f;*/
+		
+		/*
+		if (Input.isKeyDown(GLFW_KEY_SPACE)){
+			//delta = -0.15f;
+		}else{ 
+			//delta += 0.01f;
+		}
+		
+		if(Input.keys[GLFW.GLFW_KEY_UP])
+			posistion.y +=0.1f;
+		if(Input.keys[GLFW.GLFW_KEY_DOWN])
+			posistion.y -=0.1f;
+		
+	
+		if(Main.control ==true){
+		if(Input.isKeyDown(GLFW_KEY_UP)){
+			delta -=0.01f;
+		}else if(!(Input.isKeyDown(GLFW_KEY_UP)) && delta < 0){
+			delta +=0.01f;
+		}
+		
+		if(Input.isKeyDown(GLFW_KEY_DOWN)){
+			delta +=0.01f;
+		}else if(!(Input.isKeyDown(GLFW_KEY_DOWN)) && delta > 0){
+			delta -=0.01f;
+		}
+		}
+		rot = -delta * 90.0f;
+		
+		posistion.y -= delta;
+		
+		if(Main.control == false){
+			
+		}
+		*/
+	}
+	
+	
+	public void render(){
+		/*
+		Shader.Image_Name.enable();
+		Shader.Image_Name.setUniformMat4f("ml_matrix", Matrix4f.translate(posistion).multiply(Matrix4f.rotate(0f)));
+		texture.bind();
+		mesh.render();
+		Shader.Image_Name.disable();
+		*/
+	}
+	
 	public Image(float x, float y){
+		create();
 		posistion.x = x;
 		posistion.y = y;
 		ml_matrix = Matrix4f.translate(posistion);
