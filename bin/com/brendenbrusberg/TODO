@@ -1,0 +1,27 @@
+PORT LWJGL
+IMAGE CLASS
+	Contain LWJGL code for image creation and manipulation
+	Formated for .png
+Image Render Stack, >>> Render in order top down
+Char/Item/Map contain image
+
+Dykstras Algo for move(Start End) All floor tiles without char ontop mapped to verticies
+while(ap>2)move along path
+
+AI only attack while open floor plan shows chaaracter with in such distance
+
+
+Main Menu Program
+	Launch Into Other Programs
+		Multi-player
+			Java Input Streams using 			
+		Single Player
+
+Onto Integrating the 2 projects, building image render, images****,
+and replacing images into ITms and characters and the such, next is  rendering fixes, input then multiplayer
+
+fix maps
+have maps contain all character and item info and to be rendered
+state to controll logic
+game state manager, stack of states, to contain states, pause them and resume others baiscally
+by stop updating one but containing its info
