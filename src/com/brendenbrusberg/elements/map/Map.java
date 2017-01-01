@@ -17,47 +17,21 @@ public class Map {
     private int WIDTH;
     private int HEIGHT;
     //Map of tiles
-    private ArrayList<Stack> map = new ArrayList<Stack>();//TODO MAYBE A STACK MAP
-    private ArrayList<Tile> initMap = new ArrayList<Tile>();
-
+    private ItemMap itemMap= new ItemMap();
+    private CharMap charMap= new CharMap();
+    private TileMap tileMap= new TileMap();
+    
     public void initMap(){
-        for(int i = 0; i < (getMapHEIGHT()*getMapWIDTH()); i++){
-            getMap().add(i, new Stack());
-        }
-        for(int i = 0; i < getInitMap().size(); i++){
-            Tile tile = getInitMap().get(i);
-            float x = tile.getX();
-            float y = tile.getY();
-
-            getMap().get(Math.round(y*getMapWIDTH()+ x)).add(tile);
-        }
     }
 
-    public void render(SpriteBatch sb, Character character){//Character is main point of perspective
-            for(int y = character.getY() + 6; y >= character.getY()-6; y--){
-                for(int x = character.getX()-4;x<= character.getX()+6;x++){
-                    Tile tile = (Tile) getMap().get(y*getMapWIDTH()+x).peek();
-                    float x1 = tile.getX();
-                    float y1 = tile.getY();
-                    sb.draw(tile.getTexture(),0+(x1*MainClass.WIDTH),0-(y1*MainClass.HEIGHT), MainClass.WIDTH/9, MainClass.HEIGHT/16);//STACK TO RENDER AND POSISTION
-                }
-            }
-    }
-
-    public ArrayList<Stack> getMap() {
-        return map;
-    }
-
-    public void setMap(ArrayList<Stack> map) {
-        this.map = map;
-    }
-
-    public ArrayList<Tile> getInitMap() {
-        return initMap;
-    }
-
-    public void setInitMap(ArrayList<Tile> initMap) {
-        this.initMap = initMap;
+    public void render(Character character){//Character is main point of perspective
+    	for(int y = character.getY() + 6; y >= character.getY()-6; y--){
+    		for(int x = character.getX()-4;x<= character.getX()+4;x++){
+                  /*
+                   * 
+                   */
+    		}
+    	}
     }
 
     public int getMapWIDTH() {
@@ -75,4 +49,28 @@ public class Map {
     public void setMapHEIGHT(int HEIGHT) {
         this.HEIGHT = HEIGHT;
     }
+
+	public ItemMap getItemMap() {
+		return itemMap;
+	}
+
+	public void setItemMap(ItemMap itemMap) {
+		this.itemMap = itemMap;
+	}
+
+	public CharMap getCharMap() {
+		return charMap;
+	}
+
+	public void setCharMap(CharMap charMap) {
+		this.charMap = charMap;
+	}
+
+	public TileMap getTileMap() {
+		return tileMap;
+	}
+
+	public void setTileMap(TileMap tileMap) {
+		this.tileMap = tileMap;
+	}
 }

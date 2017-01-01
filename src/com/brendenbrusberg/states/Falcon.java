@@ -1,16 +1,19 @@
 package com.brendenbrusberg.states;
 
-import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
+
+import com.brendenbrusberg.Main;
+import com.brendenbrusberg.graphics.Shader;
+import com.brendenbrusberg.graphics.Texture;
+import com.brendenbrusberg.graphics.VertexArray;
+import com.brendenbrusberg.input.Input;
+import com.brendenbrusberg.math.Matrix4f;
+import com.brendenbrusberg.math.Vector3f;
 
 //import org.lwjgl.glfw.GLFW;
 
-import brusberg.mole_project.Main;
-import brusberg.mole_project.graphics.Shader;
-import brusberg.mole_project.graphics.Texture;
-import brusberg.mole_project.graphics.VertexArray;
-import brusberg.mole_project.input.Input;
-import brusberg.mole_project.math.Matrix4f;
-import brusberg.mole_project.math.Vector3f;
+
 
 public class Falcon{
 
