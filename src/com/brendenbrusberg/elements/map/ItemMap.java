@@ -11,8 +11,8 @@ public class ItemMap {
 	public ArrayList<ArrayList<ArrayList<Item>>> getList(){
 		return items;
 	}
-	public void render(){
-		
+	public void render(int x, int y){
+		items.get(y).get(x)
 	}
 	public void update(){
 		

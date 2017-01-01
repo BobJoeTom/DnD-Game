@@ -12,13 +12,7 @@ public class Tile {
     public final int WIDTH = 120;
     public final int HEIGHT = 120;
 
-    public String getTexturePath() {
-        return image.getTexturePath();
-    }
-
-    public void setTexturePath(String texturePath) {
-        image.setTeturePath(texturePath);
-    }
+    
     
     public Image getImage(){
     	return image;
@@ -42,6 +36,6 @@ public class Tile {
 
     public void setTexturePath(String texturePath) {
         this.texturePath = texturePath;
-        setTexture(getTexturePath());
+     
     }
 }

@@ -14,6 +14,7 @@ public class Item {
     public final int WIDTH = 120;
     public final int HEIGHT = 120;
     
+    
     public String getTexturePath() {
         return image.getTexturePath();
     }

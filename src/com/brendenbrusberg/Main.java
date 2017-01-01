@@ -51,8 +51,8 @@ import brusberg.mole_project.math.Matrix4f;
 
 public class Main implements Runnable{
 	
-	private int width = 1440;
-	private int height = 810;
+	private int width = 1600;
+	private int height = 900;
 	
 	private Thread thread;//Declares a new thread
 	private boolean running = false;

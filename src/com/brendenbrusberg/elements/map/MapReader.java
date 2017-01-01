@@ -1,5 +1,6 @@
 package com.brendenbrusberg.elements.map;
 
+import com.brendenbrusberg.elements.chars.Character;
 import com.brendenbrusberg.elements.items.Item;
 import com.brendenbrusberg.elements.map.tiles.Tile;
 import com.brendenbrusberg.utils.FileUtils;
@@ -46,14 +47,14 @@ public class MapReader {
 				try {
 					tile = Class.forName(elements[i]);
 					try {
-						map.getTileMap().getList().get(y).add((Tile) tile.newInstance());
+						map.getTileMap().get(y).add((Tile) tile.newInstance());
 					} catch (InstantiationException | IllegalAccessException e) {
 						System.err.println("Error Accesing Tile Map");
 						e.printStackTrace();
 					}
 				} catch (ClassNotFoundException e) {
 					System.err.println("Error reading File, no class matching name");
-					map.getTileMap().getList().get(y).add(null);
+					map.getTileMap().get(y).add(null);
 					e.printStackTrace();
 				}
 				
@@ -63,14 +64,14 @@ public class MapReader {
 				try {
 					item = Class.forName(elements[i]);
 					try {
-						map.getItemMap().getList().get(y).get(x).add((Item) item.newInstance());
+						map.getItemMap().get(y).get(x).add((Item) item.newInstance());
 					} catch (InstantiationException | IllegalAccessException e) {
 						System.err.println("Error Accesing Item Map");
 						e.printStackTrace();
 					}
 				} catch (ClassNotFoundException e) {
 					System.err.println("Error reading File, no class matching name");
-					map.getItemMap().getList().get(y).get(x).add(null);
+					map.getItemMap().get(y).get(x).add(null);
 					e.printStackTrace();
 				}
 			
@@ -80,20 +81,18 @@ public class MapReader {
 				try {
 					characters = Class.forName(elements[i]);
 					try {
-						map.getCharMap().getList().get(y).add((Character) characters.newInstance());
+						map.getCharMap().get(y).add((Character) characters.newInstance());
 					} catch (InstantiationException | IllegalAccessException e) {
 						System.err.println("Error Accesing Character Map");
 						e.printStackTrace();
 					}
 				} catch (ClassNotFoundException e) {
 					System.err.println("Error reading File, no class matching name");
-					map.getTileMap().getList().get(y).add(null);
+					map.getTileMap().get(y).add(null);
 					e.printStackTrace();
 				}
 				
 			}
 		}
-		
 	}
-
 }

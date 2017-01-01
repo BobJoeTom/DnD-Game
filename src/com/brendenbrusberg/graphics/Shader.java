@@ -1,15 +1,20 @@
 package com.brendenbrusberg.graphics;
 
-import static org.lwjgl.opengl.GL20.*;
+import static org.lwjgl.opengl.GL20.glGetUniformLocation;
+import static org.lwjgl.opengl.GL20.glUniform1f;
+import static org.lwjgl.opengl.GL20.glUniform1i;
+import static org.lwjgl.opengl.GL20.glUniform2f;
+import static org.lwjgl.opengl.GL20.glUniform3f;
+import static org.lwjgl.opengl.GL20.glUniformMatrix4fv;
+import static org.lwjgl.opengl.GL20.glUseProgram;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import brusberg.mole_project.graphics.Shader;
+import com.brendenbrusberg.math.Matrix4f;
+import com.brendenbrusberg.math.Vector3f;
+import com.brendenbrusberg.utils.ShaderUtils;
 
-import brusberg.mole_project.math.Matrix4f;
-import brusberg.mole_project.math.Vector3f;
-import brusberg.mole_project.utils.ShaderUtils;
 
 //Class to activate shaders
 public class Shader {

@@ -2,8 +2,6 @@ package com.brendenbrusberg.graphics;
 
 import static org.lwjgl.glfw.GLFW.*;
 
-//import org.lwjgl.glfw.GLFW;
-
 import com.brendenbrusberg.Main;
 import com.brendenbrusberg.graphics.Shader;
 import com.brendenbrusberg.graphics.Texture;
@@ -17,10 +15,12 @@ public class Image {
 	private Vector3f posistion = new Vector3f();
 	private Matrix4f ml_matrix;
 	
-	private static float width, height;
+	private float width, height;
 	private String texturePath;
-	private static Texture texture;
-	private static VertexArray mesh;
+	private Texture texture;
+	private VertexArray mesh;
+	private Shader shader;
+	private float rot = 0f;
 	
 	public void create(){
 		
@@ -94,16 +94,24 @@ public class Image {
 		}
 		*/
 	}
-	
-	
 	public void render(){
-		/*
-		Shader.Image_Name.enable();
-		Shader.Image_Name.setUniformMat4f("ml_matrix", Matrix4f.translate(posistion).multiply(Matrix4f.rotate(0f)));
+		
+		shader.enable();
+		shader.setUniformMat4f("ml_matrix", Matrix4f.translate(posistion).multiply(Matrix4f.rotate(rot)));
 		texture.bind();
 		mesh.render();
-		Shader.Image_Name.disable();
-		*/
+		shader.disable();
+		
+	}
+	
+	public void render(Shader selectedShader){
+		
+		selectedShader.enable();
+		selectedShader.setUniformMat4f("ml_matrix", Matrix4f.translate(posistion).multiply(Matrix4f.rotate(rot)));
+		texture.bind();
+		mesh.render();
+		selectedShader.disable();
+		
 	}
 	
 	public Image(float x, float y){
@@ -119,6 +127,7 @@ public class Image {
 	
 	public void setTeturePath(String texturePath){
 		this.texturePath=texturePath;
+		setTexture(texturePath);
 	}
 	public float getX(){
 		return posistion.x;
@@ -132,20 +141,48 @@ public class Image {
 		return ml_matrix;
 	}
 	
-	public static VertexArray getMesh(){
+	public VertexArray getMesh(){
 		return mesh;
 	}
 	
-	public static Texture getTexture(){
+	public Texture getTexture(){
 		return texture;
 	}
 	
-	public static float getWidth(){
+	public float getWidth(){
 		return width;
 	}
 	
-	public static float getHeight(){
+	public float getHeight(){
 		return height;
 	}
 
+	public Vector3f getPosistion() {
+		return posistion;
+	}
+
+	public void setPosistion(Vector3f posistion) {
+		this.posistion = posistion;
+	}
+
+	public float getRot() {
+		return rot;
+	}
+
+	public void setRot(float rot) {
+		this.rot = rot;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = new Texture(texture);
+	}
+
+	public void setTexture(Texture texture) {
+		this.texture = texture;
+	}
+	
+	public void setMesh(VertexArray mesh) {
+		this.mesh = mesh;
+	}
+	
 }

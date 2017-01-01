@@ -8,6 +8,7 @@ import com.brendenbrusberg.elements.chars.CharClass;
 import com.brendenbrusberg.elements.races.Race;
 import com.brendenbrusberg.elements.status.Status;
 import com.brendenbrusberg.elements.items.weapons.Weapon;
+import com.brendenbrusberg.elements.items.Item;
 import com.brendenbrusberg.elements.items.armor.Armor;
 
 /**
@@ -37,7 +38,7 @@ public class Character {
 
     //Textures
     private String texturePath;//TODO will be race, setRace will also set texture
-    private Texture texture;
+    private Image image;
 
 
     private ArrayList<Item> inventory = new ArrayList<Item>();
@@ -67,22 +68,14 @@ public class Character {
     }
 
 
-    public Texture getTexture() {
-        return texture;
-    }
-
-    public void setTexture(String texture) {
-        this.texture = new Texture(texture);
-    }
     public String getTexturePath() {
-        return texturePath;
+        return image.getTexturePath();
     }
 
     public void setTexturePath(String texturePath) {
-        this.texturePath = texturePath;
-        setTexture(getTexturePath());
+        image.setTeturePath(texturePath);
     }
-
+    
     public int getX() {
         return x;
     }
@@ -234,4 +227,12 @@ public class Character {
     public void setInventory(ArrayList<Item> inventory) {
         this.inventory = inventory;
     }
+
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
 }
