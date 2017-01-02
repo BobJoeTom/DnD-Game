@@ -1,4 +1,4 @@
-package io.github.bobjoetom.elements.Races;
+package com.brendenbrusberg.elements.races;
 
 /**
  * Created by Brenden on 7/2/2016.

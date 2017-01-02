@@ -39,7 +39,7 @@ public class MapReader {
 		}
 	}
 	
-	public void reflect(int x, int y, String[] elements){
+	private void reflect(int x, int y, String[] elements){
 		for(int i = 0; i < elements.length;i++){
 			String id = elements[i].substring(0, 4);
 			if(id.equals("tile")){

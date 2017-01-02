@@ -8,14 +8,15 @@ import org.lwjgl.glfw.GLFW;
 //import org.newdawn.slick.TrueTypeFont;
 //import org.newdawn.slick.Color;
 
-import brusberg.mole_project.level.Rock;
-import brusberg.mole_project.Main;
-import brusberg.mole_project.graphics.Shader;
-import brusberg.mole_project.graphics.Texture;
-import brusberg.mole_project.graphics.VertexArray;
-import brusberg.mole_project.input.Input;
-import brusberg.mole_project.math.Matrix4f;
-import brusberg.mole_project.math.Vector3f;
+import com.brendenbrusberg.Main;
+import com.brendenbrusberg.graphics.Shader;
+import com.brendenbrusberg.graphics.Texture;
+import com.brendenbrusberg.graphics.VertexArray;
+import com.brendenbrusberg.input.Input;
+import com.brendenbrusberg.math.Matrix4f;
+import com.brendenbrusberg.math.Vector3f;
+
+
 
 public class Level {
 
@@ -206,7 +207,7 @@ public class Level {
 	}
 	*/
 	
-	private void renderRocks(){
+	/*private void renderRocks(){
 		Shader.ROCK.enable();
 		Shader.ROCK.setUniformMat4f("vw_matrix", Matrix4f.translate(new Vector3f(xScroll * 0.03f, 0.0f, 0.0f)));
 		Rock.getTexture().bind();
@@ -240,5 +241,5 @@ public class Level {
 			Shader.FADE.disable();
 	}
 	
-	
+	*/
 }

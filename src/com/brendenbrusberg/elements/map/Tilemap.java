@@ -13,9 +13,7 @@ public class TileMap {
 	public ArrayList<ArrayList<Tile>> getList(){
 		return tiles;
 	}
-	public void render(int x, int y)
-		
-	}
+
 	public void update(){
 		
 	}

@@ -35,19 +35,21 @@ import static org.lwjgl.opengl.GL13.glActiveTexture;
 //Imports NULL values for lwjgl to C
 import static org.lwjgl.system.MemoryUtil.NULL;
 
-import java.nio.ByteBuffer;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;
-import org.lwjgl.glfw.GLFWvidmode;
+import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
+import org.lwjgl.system.Configuration;
 
-import brusberg.mole_project.graphics.Shader;
-import brusberg.mole_project.input.Input;
-import brusberg.mole_project.level.Falcon;
-import brusberg.mole_project.level.Level;
-import brusberg.mole_project.math.Matrix4f;
-
+import com.brendenbrusberg.elements.map.MapReader;
+import com.brendenbrusberg.graphics.Shader;
+import com.brendenbrusberg.input.Input;
+import com.brendenbrusberg.math.Matrix4f;
+import com.brendenbrusberg.states.Single;
 
 public class Main implements Runnable{
 	
@@ -60,8 +62,8 @@ public class Main implements Runnable{
 	private long window;//Identifier openGL is C
 	
 	//Takes in shaders
-	private Level level;
-	
+	//private Level level;
+	private Single level;
 	public static boolean control = true;
 	
 	private GLFWKeyCallback keyCallback;// *** FIX WITH IMPORT*********
@@ -82,22 +84,29 @@ public class Main implements Runnable{
 	//============================================================================================================================================
 	
 	private void init(){ //Initializes the game called in the run method which starts on the Game thread at the beggining of the program***Intializes openGL and has to be INTIALIZED on the GAME THREAD or the same thread that is rendering and under the run method
-		
+
+	    
 		//openGL init---------------------------
-		if (glfwInit() != GL_TRUE){//If GLFW does not initialize do >
-			//TODO
+		if (!glfwInit()){//If GLFW does not initialize do >
 			return;
 		}
 		
 		glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);//Finds values of the windows properties i.e refresh rate pixels colors etc blah blah blah and can be resizable
 		window = glfwCreateWindow(width, height, "Molennium Falcon", NULL, NULL);//Identifier for window in C
-		if (glfwInit() != GL_TRUE) {
+		if (!glfwInit()) {
 			System.err.println("Could not initialize GLFW!");
 			return;
 		}
-		ByteBuffer vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());//Byte Buffer to pass values of monitor
+		/*Oldimplementation,ByteBuffer vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());//Byte Buffer to pass values of monitor
 		glfwSetWindowPos(window, (GLFWvidmode.width(vidmode) / 4), (GLFWvidmode.height(vidmode) /4));//Sets the posistion of the window to the center of the primary screen
-		
+		*/
+		GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+
+	    glfwSetWindowPos(
+	            window,
+	             (vidmode.width() - width) / 2,
+	            (vidmode.height() - height) / 2
+	        ); 
 		glfwSetKeyCallback(window, keyCallback = new Input());//*****FIIXXX*********************//Sets the key callback of the specified window, which is called when a key is pressed, repeated or released. 
 		
 		glfwMakeContextCurrent(window);//Makes the OpenGL or OpenGL ES context of the specified window current on the calling thread. A context can only be made current on a single thread at a time and each thread can have only a single current context at a time. 
@@ -126,8 +135,11 @@ public class Main implements Runnable{
 		Shader.ROCK.setUniform1i("tex", 0);
 		
 		
-		level = new Level();
+		level = new Single();
 		
+		MapReader mapReader = new MapReader();
+		mapReader.loadMap("res/storeage/map1");
+		level.setMap(mapReader.getMap());
 	}
 	//============================================================================================================================================
 	//============================================================================================================================================
@@ -163,13 +175,13 @@ public class Main implements Runnable{
 				frames = 0;
 			}
 			
-			if(glfwWindowShouldClose(window) == GL_TRUE){
+			if(glfwWindowShouldClose(window)){
 				running = false;
 			}
 		}
 		GLFW.glfwDestroyWindow(window);
 		GLFW.glfwTerminate();
-		keyCallback.release();//****FIIIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*******************************
+		keyCallback.free();//****FIIIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*******************************
 	}
 	//============================================================================================================================================
 	//============================================================================================================================================
@@ -182,15 +194,14 @@ public class Main implements Runnable{
 			System.out.println("Flap!");
 		}
 		*/
-		if(level.isGameOver()){
-			level = new Level();
-			Falcon.posistion.y = 0.0f;
-			control = true;
-		}
+		//if(level.isGameOver()){
+			//level = new Level();
+			//alcon.posistion.y = 0.0f;
+			//control = true;
+		//}
 	}
 	//============================================================================================================================================
 	//============================================================================================================================================
-	
 	private void render() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		level.render();
@@ -202,13 +213,18 @@ public class Main implements Runnable{
 		glfwSwapBuffers(window);/* In every swap chain there are at least two buffers. The first framebuffer, the screenbuffer, is the buffer that is rendered to the output of the video card. The remaining buffers are known as backbuffers. Each time a new frame is displayed, the first backbuffer in
 		 the swap chain takes the place of the screenbuffer, this is called presentation or swapping. A variety of other actions may be taken on the previous screenbuffer and other backbuffers (if they exist). The screenbuffer may be simply overwritten or returned to the
 		 back of the swap chain for further processing. The action taken is decided by the client application and is API dependent.
-		 */
-		
+		 */	
 	}
 	//============================================================================================================================================
 	//============================================================================================================================================
 	public static void main(String[] args) {
+		/*if (System.getProperty("org.lwjgl.librarypath") == null) {
+		    Path path = Paths.get("native");
+		    String librarypath = path.toAbsolutePath().toString();
+		    System.setProperty("org.lwjgl.librarypath", librarypath);
+		}*/
+		System.setProperty("org.lwjgl.librarypath", "/Users/Linda/Desktop/lwjgl/native");
+		//Configuration.LIBRARY_PATH.set("/Users/Linda/Desktop/lwjgl");
 		new Main().start();
 	}
-
 }

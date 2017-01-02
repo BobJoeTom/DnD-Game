@@ -2,7 +2,7 @@ package com.brendenbrusberg.elements.status;
 
 import com.brendenbrusberg.elements.chars.Character;
 
-import io.github.bobjoetom.elements.status.Status;
+
 
 /**
  * Created by Brenden on 7/5/2016.

@@ -60,11 +60,11 @@ public class Map {
     	int yStep = 0;
     	for(int y = (int) camY - 6; y >= (int) camY+6; y--){
     		for(int x = (int) camX-10;x<= (int)camX+10;x++){
-                tileMap.get(y).get(x).render(xStep, yStep);
+                tileMap.get(y).get(x).getImage().render(xStep, yStep);
                 for(int i = 0; i < itemMap.get(y).get(x).size();i++){
-                	itemMap.get(y).get(x).get(i).getImage().render();
+                	itemMap.get(y).get(x).get(i).getImage().render(xStep,yStep);
                 }
-                charMap.get(y).get(x).getImage().render();
+                charMap.get(y).get(x).getImage().render(xStep,yStep);
                 xStep++;
     		}
     		yStep++;

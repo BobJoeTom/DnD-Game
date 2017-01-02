@@ -94,6 +94,11 @@ public class Image {
 		}
 		*/
 	}
+	public void render(int x, int y){//x and y are grid locations on screen to render, used by map rendering:Intaking xStep and yStep
+		setPosistion(new Vector3f(x,y,0));
+		render();
+	}
+	
 	public void render(){
 		
 		shader.enable();

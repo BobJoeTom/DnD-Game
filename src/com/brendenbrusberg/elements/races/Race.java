@@ -1,6 +1,6 @@
-package io.github.bobjoetom.elements.Races;
+package com.brendenbrusberg.elements.races;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.brendenbrusberg.graphics.Image;
 
 /**
  * Created by Brenden on 6/30/2016.
@@ -13,15 +13,9 @@ public class Race {
     private int strength;
 
     private String texturePath;
-    private Texture texture;
+    private Image image;
 
-    public Texture getTexture() {
-        return texture;
-    }
-
-    public void setTexture(String texture) {
-        this.texture = new Texture(texture);
-    }
+    
 
     public String getTexturePath() {
         return texturePath;
@@ -29,7 +23,7 @@ public class Race {
 
     public void setTexturePath(String texturePath) {
         this.texturePath = texturePath;
-        setTexture(getTexturePath());
+        image.setTexture(texturePath);
     }
 
     public int getVitality() {

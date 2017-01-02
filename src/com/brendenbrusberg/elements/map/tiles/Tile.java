@@ -38,4 +38,9 @@ public class Tile {
         this.texturePath = texturePath;
      
     }
+
+	public void render(int xStep, int yStep) {
+		// TODO Auto-generated method stub
+		
+	}
 }

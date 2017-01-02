@@ -1,5 +1,6 @@
 package com.brendenbrusberg.elements.items.armor;
 
+import com.brendenbrusberg.elements.items.Item;
 import com.brendenbrusberg.graphics.Image;
 
 /**

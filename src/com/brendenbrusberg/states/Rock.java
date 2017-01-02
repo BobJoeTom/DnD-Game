@@ -1,9 +1,9 @@
 package com.brendenbrusberg.states;
 
-import brusberg.mole_project.graphics.Texture;
-import brusberg.mole_project.graphics.VertexArray;
-import brusberg.mole_project.math.Matrix4f;
-import brusberg.mole_project.math.Vector3f;
+import com.brendenbrusberg.graphics.Texture;
+import com.brendenbrusberg.graphics.VertexArray;
+import com.brendenbrusberg.math.Matrix4f;
+import com.brendenbrusberg.math.Vector3f;
 
 public class Rock {
 

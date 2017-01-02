@@ -1,10 +1,12 @@
 package com.brendenbrusberg.math;
 
-import static java.lang.Math.*;
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+import static java.lang.Math.toRadians;
 
 import java.nio.FloatBuffer;
 
-import brusberg.mole_project.utils.BufferUtils;
+import com.brendenbrusberg.utils.BufferUtils;
 
 
 	/*
